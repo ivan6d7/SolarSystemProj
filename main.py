@@ -13,14 +13,18 @@ running = True
 dt = 0
 
 #acceleration constant
-a = 500
+a = 0.001
 
 
 # number of balls
 balls_number = 10
 
 
-g = 100000
+G = 10e-11
+
+M_sun = 1.9885e30
+
+M_earth = 5.972e24
 
 balls = []
 
@@ -31,12 +35,16 @@ class Ball():
         self.position = initial_position
         self.velocity = initial_velocity
         self.acceleration = 0
-        self.radius = mass**(2/3)*4
+        self.radius = 30
         balls.append(self)
 
+sun = Ball(1, M_sun, pygame.Vector2(screen.get_width()/2, screen.get_height() / 2), pygame.Vector2(0, 0))
 
-for i in range(balls_number):
-    Ball(i, randrange(10, 50), pygame.Vector2(randrange(0, screen.get_width() * 3 // 4), randrange(0, screen.get_height() * 2 // 3)), pygame.Vector2(randrange(-50, 50), randrange(-50, 50)))
+earth = Ball(2, M_earth, pygame.Vector2(screen.get_width()/2 + 200, screen.get_height() / 2), pygame.Vector2(0, (G * M_sun / 200)**(0.5)))
+
+#for i in range(balls_number):
+#    Ball(i, randrange(10, 50), pygame.Vector2(randrange(0, screen.get_width() * 3 // 4), randrange(0, screen.get_height() * 2 // 3)), pygame.Vector2(randrange(-50, 50), randrange(-50, 50)))
+
 
 
 while running:
@@ -68,7 +76,7 @@ while running:
             dist = (other_ball.position - ball.position).length()
             if dist < (ball.radius + other_ball.radius): 
                 dist = (ball.radius + other_ball.radius)
-            ball.acceleration = g * other_ball.mass / dist**2
+            ball.acceleration = G * other_ball.mass / dist**2
             # print(ball.acceleration)
 
             ball.velocity += ball.acceleration * dt * (other_ball.position - ball.position).normalize()
@@ -97,6 +105,6 @@ while running:
     # limits FPS to 60
     # dt is delta time in seconds since last frame, used for framerate-
     # independent physics.
-    dt = clock.tick(120) / 1000
+    dt = clock.tick(120) / 10000000000
 
 pygame.quit()
