@@ -36,7 +36,7 @@ class Ball():
 
 
 for i in range(balls_number):
-    Ball(i, randrange(10, 50), pygame.Vector2(randrange(0, screen.get_width() * 3 / 4), randrange(0, screen.get_height() * 2 / 3)), pygame.Vector2(randrange(-50, 50), randrange(-50, 50)))
+    Ball(i, randrange(10, 50), pygame.Vector2(randrange(0, screen.get_width() * 3 // 4), randrange(0, screen.get_height() * 2 // 3)), pygame.Vector2(randrange(-50, 50), randrange(-50, 50)))
 
 
 while running:
