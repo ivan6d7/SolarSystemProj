@@ -105,6 +105,7 @@ class Ball():
         self.radius = 5
         balls.append(self)
 
+<<<<<<< HEAD
 sun = Ball(1, sun["mass"], pygame.Vector2(screen.get_width()/2, screen.get_height() / 2), pygame.Vector2(0, 0))
 mercury = Ball(3, planets[0]["mass"], pygame.Vector2(screen.get_width()/2 + planets[0]["radius"], screen.get_height() / 2), pygame.Vector2(0, planets[0]["velocity"]))
 venus = Ball(4, planets[1]["mass"], pygame.Vector2(screen.get_width()/2 + planets[1]["radius"], screen.get_height() / 2), pygame.Vector2(0, planets[1]["velocity"]))
@@ -114,6 +115,11 @@ jupiter = Ball(6, planets[4]["mass"], pygame.Vector2(screen.get_width()/2 + plan
 #saturn = Ball(7, planets[5]["mass"], pygame.Vector2(screen.get_width()/2 + planets[5]["radius"], screen.get_height() / 2), pygame.Vector2(0, planets[5]["velocity"]))
 #uranus = Ball(8, planets[6]["mass"], pygame.Vector2(screen.get_width()/2 + planets[6]["radius"], screen.get_height() / 2), pygame.Vector2(0, planets[6]["velocity"]))
 #neptune = Ball(9, planets[7]["mass"], pygame.Vector2(screen.get_width()/2 + planets[7]["radius"], screen.get_height() / 2), pygame.Vector2(0, planets[7]["velocity"]))
+=======
+
+# Initialize sun and earth
+sun = Ball(1, M_sun, pygame.Vector2(screen.get_width()/2, screen.get_height() / 2), pygame.Vector2(0, 0))
+>>>>>>> 8919eeb (tang vel file)
 
 
 
