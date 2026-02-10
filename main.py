@@ -45,43 +45,43 @@ planets = [
     {
         "name": "Venus",
         "radius": 72.3,
-        "velocity": 1.11,
+        "velocity": 3.50,
         "mass": 4.87
     },
     {
         "name": "Earth",
         "radius": 100.0,
-        "velocity": 0.94,
+        "velocity": 2.98,
         "mass": 5.97
     },
     {
         "name": "Mars",
         "radius": 152.0,
-        "velocity": 0.76,
+        "velocity": 2.41,
         "mass": 0.642
     },
     {
         "name": "Jupiter",
         "radius": 520.0,
-        "velocity": 0.41,
+        "velocity": 1.31,
         "mass": 1898.0
     },
     {
         "name": "Saturn",
         "radius": 958.0,
-        "velocity": 0.31,
+        "velocity": 0.97,
         "mass": 568.0
     },
     {
         "name": "Uranus",
         "radius": 1920.0,
-        "velocity": 0.22,
+        "velocity": 0.68,
         "mass": 86.8
     },
     {
         "name": "Neptune",
         "radius": 3000.0,
-        "velocity": 0.17,
+        "velocity": 0.54,
         "mass": 102.0
     }
 ]
