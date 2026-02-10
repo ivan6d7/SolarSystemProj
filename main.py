@@ -22,9 +22,20 @@ balls_number = 10
 
 G = 10e-11
 
+
 M_sun = 1.9885e30
 
-M_earth = 5.972e24
+M_mercury = 3.3011e23
+M_venus   = 4.8675e24
+M_earth   = 5.97237e24
+M_mars    = 6.4171e23
+M_jupiter = 1.8982e27
+M_saturn  = 5.6834e26
+M_uranus  = 8.6810e25
+M_neptune = 1.02413e26
+
+
+
 
 balls = []
 
@@ -41,6 +52,7 @@ class Ball():
 sun = Ball(1, M_sun, pygame.Vector2(screen.get_width()/2, screen.get_height() / 2), pygame.Vector2(0, 0))
 
 earth = Ball(2, M_earth, pygame.Vector2(screen.get_width()/2 + 200, screen.get_height() / 2), pygame.Vector2(0, (G * M_sun / 200)**(0.5)))
+
 
 #for i in range(balls_number):
 #    Ball(i, randrange(10, 50), pygame.Vector2(randrange(0, screen.get_width() * 3 // 4), randrange(0, screen.get_height() * 2 // 3)), pygame.Vector2(randrange(-50, 50), randrange(-50, 50)))
