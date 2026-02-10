@@ -39,7 +39,7 @@ planets = [
     {
         "name": "Mercury",
         "radius": 38.7,
-        "velocity": 1.50,
+        "velocity": 4.74,
         "mass": 0.330
     },
     {
