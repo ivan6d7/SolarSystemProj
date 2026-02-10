@@ -20,9 +20,9 @@ a = 0.001
 balls_number = 10
 
 
-G = 10e-11
+G = 0.1
 
-
+'''
 M_sun = 1.9885e30
 
 M_mercury = 3.3011e23
@@ -33,9 +33,65 @@ M_jupiter = 1.8982e27
 M_saturn  = 5.6834e26
 M_uranus  = 8.6810e25
 M_neptune = 1.02413e26
+'''
 
+planets = [
+    {
+        "name": "Mercury",
+        "radius": 38.7,
+        "velocity": 1.50,
+        "mass": 0.330
+    },
+    {
+        "name": "Venus",
+        "radius": 72.3,
+        "velocity": 1.11,
+        "mass": 4.87
+    },
+    {
+        "name": "Earth",
+        "radius": 100.0,
+        "velocity": 0.94,
+        "mass": 5.97
+    },
+    {
+        "name": "Mars",
+        "radius": 152.0,
+        "velocity": 0.76,
+        "mass": 0.642
+    },
+    {
+        "name": "Jupiter",
+        "radius": 520.0,
+        "velocity": 0.41,
+        "mass": 1898.0
+    },
+    {
+        "name": "Saturn",
+        "radius": 958.0,
+        "velocity": 0.31,
+        "mass": 568.0
+    },
+    {
+        "name": "Uranus",
+        "radius": 1920.0,
+        "velocity": 0.22,
+        "mass": 86.8
+    },
+    {
+        "name": "Neptune",
+        "radius": 3000.0,
+        "velocity": 0.17,
+        "mass": 102.0
+    }
+]
 
-
+sun = {
+    "name": "Sun",
+    "position": (0.0, 0.0),
+    "velocity": (0.0, 0.0),
+    "mass": 1989000.0  
+}
 
 balls = []
 
@@ -46,12 +102,19 @@ class Ball():
         self.position = initial_position
         self.velocity = initial_velocity
         self.acceleration = 0
-        self.radius = 30
+        self.radius = 5
         balls.append(self)
 
-sun = Ball(1, M_sun, pygame.Vector2(screen.get_width()/2, screen.get_height() / 2), pygame.Vector2(0, 0))
+sun = Ball(1, sun["mass"], pygame.Vector2(screen.get_width()/2, screen.get_height() / 2), pygame.Vector2(0, 0))
+mercury = Ball(3, planets[0]["mass"], pygame.Vector2(screen.get_width()/2 + planets[0]["radius"], screen.get_height() / 2), pygame.Vector2(0, planets[0]["velocity"]))
+venus = Ball(4, planets[1]["mass"], pygame.Vector2(screen.get_width()/2 + planets[1]["radius"], screen.get_height() / 2), pygame.Vector2(0, planets[1]["velocity"]))
+earth = Ball(2, planets[2]["mass"], pygame.Vector2(screen.get_width()/2 + planets[2]["radius"], screen.get_height() / 2), pygame.Vector2(0, planets[2]["velocity"]))
+mars = Ball(5, planets[3]["mass"], pygame.Vector2(screen.get_width()/2 + planets[3]["radius"], screen.get_height() / 2), pygame.Vector2(0, planets[3]["velocity"]))
+jupiter = Ball(6, planets[4]["mass"], pygame.Vector2(screen.get_width()/2 + planets[4]["radius"], screen.get_height() / 2), pygame.Vector2(0, planets[4]["velocity"]))
+#saturn = Ball(7, planets[5]["mass"], pygame.Vector2(screen.get_width()/2 + planets[5]["radius"], screen.get_height() / 2), pygame.Vector2(0, planets[5]["velocity"]))
+#uranus = Ball(8, planets[6]["mass"], pygame.Vector2(screen.get_width()/2 + planets[6]["radius"], screen.get_height() / 2), pygame.Vector2(0, planets[6]["velocity"]))
+#neptune = Ball(9, planets[7]["mass"], pygame.Vector2(screen.get_width()/2 + planets[7]["radius"], screen.get_height() / 2), pygame.Vector2(0, planets[7]["velocity"]))
 
-earth = Ball(2, M_earth, pygame.Vector2(screen.get_width()/2 + 200, screen.get_height() / 2), pygame.Vector2(0, (G * M_sun / 200)**(0.5)))
 
 
 #for i in range(balls_number):
@@ -117,6 +180,6 @@ while running:
     # limits FPS to 60
     # dt is delta time in seconds since last frame, used for framerate-
     # independent physics.
-    dt = clock.tick(120) / 10000000000
+    dt = clock.tick(120)/1000
 
 pygame.quit()
